@@ -1,36 +1,53 @@
-//
-//  nayauTests.swift
-//  nayauTests
-//
-//  Created by Abner Terribili on 4/11/16.
-//  Copyright © 2016 Elo7. All rights reserved.
-//
-
 import XCTest
 @testable import nayau
 
-class nayauTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class NayauTests: XCTestCase {
+
+    func testSomeDebugLog() {
+        Nayau.defaultInstance.debug("teste", logType: LogType.Error)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+}
+
+class MessageTests: XCTestCase {
+    func testShouldValidateDebugMessage() {
+        let messageBuilder = MessageBuilder { builder in
+            builder.message = "A Debug Message"
+            builder.logType = LogType.Debug
         }
+
+        let description = Message(messageBuilder: messageBuilder)?.description
+        XCTAssertEqual(description, "[Debug] : A Debug Message")
     }
-    
+
+    func testShouldValidateWarningMessage() {
+        let messageBuilder = MessageBuilder { builder in
+            builder.message = "A Warning Message"
+            builder.logType = LogType.Warning
+        }
+
+        let description = Message(messageBuilder: messageBuilder)?.description
+        XCTAssertEqual(description, "[Warning] : A Warning Message")
+    }
+
+    func testShouldValidateErrorMessage() {
+        let messageBuilder = MessageBuilder { builder in
+            builder.message = "A Error Message"
+            builder.logType = LogType.Error
+        }
+
+        let description = Message(messageBuilder: messageBuilder)?.description
+        XCTAssertEqual(description, "[Error] : A Error Message")
+    }
+
+    func testShouldValidateInformationMessage() {
+        let messageBuilder = MessageBuilder { builder in
+            builder.message = "A Information Message"
+            builder.logType = LogType.Information
+        }
+
+        let description = Message(messageBuilder: messageBuilder)?.description
+        XCTAssertEqual(description, "[Information] : A Information Message")
+
+        
+    }
 }

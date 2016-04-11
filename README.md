@@ -9,7 +9,7 @@
 Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).
 
 ## Getting started
-#### Intitialization
+#### Standard Usage
 ```swift
 import nayau
 
