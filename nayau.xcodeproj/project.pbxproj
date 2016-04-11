@@ -11,6 +11,9 @@
 		F1CB8A6F1CBC04EE008D6B6E /* nayau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB8A641CBC04EE008D6B6E /* nayau.framework */; };
 		F1CB8A741CBC04EE008D6B6E /* nayauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */; };
 		F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A7E1CBC0530008D6B6E /* Nayau.swift */; };
+		F1CB8A811CBC27F9008D6B6E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A801CBC27F9008D6B6E /* Message.swift */; };
+		F1CB8A831CBC2818008D6B6E /* FileInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A821CBC2818008D6B6E /* FileInformation.swift */; };
+		F1CB8A851CBC2837008D6B6E /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A841CBC2837008D6B6E /* LogType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,9 @@
 		F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nayauTests.swift; sourceTree = "<group>"; };
 		F1CB8A751CBC04EE008D6B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1CB8A7E1CBC0530008D6B6E /* Nayau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nayau.swift; sourceTree = "<group>"; };
+		F1CB8A801CBC27F9008D6B6E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F1CB8A821CBC2818008D6B6E /* FileInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInformation.swift; sourceTree = "<group>"; };
+		F1CB8A841CBC2837008D6B6E /* LogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,9 @@
 				F1CB8A671CBC04EE008D6B6E /* nayau.h */,
 				F1CB8A691CBC04EE008D6B6E /* Info.plist */,
 				F1CB8A7E1CBC0530008D6B6E /* Nayau.swift */,
+				F1CB8A801CBC27F9008D6B6E /* Message.swift */,
+				F1CB8A821CBC2818008D6B6E /* FileInformation.swift */,
+				F1CB8A841CBC2837008D6B6E /* LogType.swift */,
 			);
 			path = nayau;
 			sourceTree = "<group>";
@@ -197,7 +206,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CB8A851CBC2837008D6B6E /* LogType.swift in Sources */,
 				F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */,
+				F1CB8A811CBC27F9008D6B6E /* Message.swift in Sources */,
+				F1CB8A831CBC2818008D6B6E /* FileInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +397,7 @@
 				F1CB8A7A1CBC04EE008D6B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1CB8A7B1CBC04EE008D6B6E /* Build configuration list for PBXNativeTarget "nayauTests" */ = {
 			isa = XCConfigurationList;
@@ -393,6 +406,7 @@
 				F1CB8A7D1CBC04EE008D6B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
