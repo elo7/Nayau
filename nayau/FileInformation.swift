@@ -4,6 +4,10 @@ struct FileInformation: CustomStringConvertible {
     var function: String?
 
     var description: String {
-        return "File: \(self.file) Line Number: \(self.line) Function: \(self.function)"
+        if let file = self.file, let line = self.line, let function = self.function {
+            return "File: \(file) Line Number: \(line) Function: \(function)"
+        }
+
+        return ""
     }
 }

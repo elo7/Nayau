@@ -4,19 +4,15 @@ struct Nayau {
     static let defaultInstance: Nayau = Nayau()
     var enableFileName = false
 
-    func debug(message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) -> String? {
+    func debug(message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
         #if DEBUG
-            log(message: message, logType: logType)
-
-            return message
+            log(message: message, logType: logType, file: file, line: line, function: function)
         #endif
-
-        return nil
     }
 
-    func production(message: String, logType: LogType? = .Information) {
+    func production(message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
         #if RELEASE
-            log(message: message, logType: logType)
+            log(message: message, logType: logType, file: file, line: line, function: function)
         #endif
     }
 

@@ -47,7 +47,24 @@ class MessageTests: XCTestCase {
 
         let description = Message(messageBuilder: messageBuilder)?.description
         XCTAssertEqual(description, "[Information] : A Information Message")
+    }
 
-        
+    func testShouldValidateMessageWithoutLogType() {
+        let messageBuilder = MessageBuilder { builder in
+            builder.message = "A Message without LogType"
+        }
+
+        let description = Message(messageBuilder: messageBuilder)?.description
+        XCTAssertEqual(description, "A Message without LogType")
+    }
+
+    func testShouldValidateMessageWithFileInformation() {
+        let messageBuilder = MessageBuilder { builder in
+            builder.message = "A Message without LogType"
+            builder.fileInformation = FileInformation(file: "Test.swift", line: 55, function: "xablau()")
+        }
+
+        let description = Message(messageBuilder: messageBuilder)?.description
+        XCTAssertEqual(description, "A Message without LogType\nFile: Test.swift Line Number: 55 Function: xablau()")
     }
 }
