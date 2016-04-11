@@ -10,6 +10,7 @@
 		F1CB8A681CBC04EE008D6B6E /* nayau.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CB8A671CBC04EE008D6B6E /* nayau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1CB8A6F1CBC04EE008D6B6E /* nayau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB8A641CBC04EE008D6B6E /* nayau.framework */; };
 		F1CB8A741CBC04EE008D6B6E /* nayauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */; };
+		F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A7E1CBC0530008D6B6E /* Nayau.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F1CB8A6E1CBC04EE008D6B6E /* nayauTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nayauTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nayauTests.swift; sourceTree = "<group>"; };
 		F1CB8A751CBC04EE008D6B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1CB8A7E1CBC0530008D6B6E /* Nayau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nayau.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				F1CB8A671CBC04EE008D6B6E /* nayau.h */,
 				F1CB8A691CBC04EE008D6B6E /* Info.plist */,
+				F1CB8A7E1CBC0530008D6B6E /* Nayau.swift */,
 			);
 			path = nayau;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +314,7 @@
 		F1CB8A791CBC04EE008D6B6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +325,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = elo7.nayau;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F1CB8A7A1CBC04EE008D6B6E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
