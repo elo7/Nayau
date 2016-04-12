@@ -16,7 +16,7 @@ public struct Nayau {
                 Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
             }
         } else {
-            preconditionFailure("You should call Nayau.setup before use it")
+            print("You should call Nayau.setup before use it")
         }
     }
 
@@ -26,7 +26,7 @@ public struct Nayau {
                 Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
             }
         } else {
-            preconditionFailure("You should call Nayau.setup before use it")
+            print("You should call Nayau.setup before use it")
         }
     }
 
