@@ -3,22 +3,30 @@ import Foundation
 public struct Nayau {
     private static var defaultInstance: Nayau = Nayau()
     private var enableFileName = false
-    private var debugBuild = false
+    private var debugBuild: Bool?
 
-    public static func setup(enableFileName: Bool = false, debugBuild: Bool) {
+    public static func setup(enableFileName enableFileName: Bool = false, debugBuild: Bool) {
         Nayau.defaultInstance.debugBuild = debugBuild
         Nayau.defaultInstance.enableFileName = enableFileName
     }
 
     public static func debug(message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
-        if Nayau.defaultInstance.debugBuild {
-            Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
+        if let debugBuild = Nayau.defaultInstance.debugBuild {
+            if debugBuild {
+                Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
+            }
+        } else {
+            preconditionFailure("You should call Nayau.setup before use it")
         }
     }
 
     public static func production(message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
-        if !Nayau.defaultInstance.debugBuild {
-            Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
+        if let debugBuild = Nayau.defaultInstance.debugBuild {
+            if !debugBuild {
+                Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
+            }
+        } else {
+            preconditionFailure("You should call Nayau.setup before use it")
         }
     }
 
