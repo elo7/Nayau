@@ -1,19 +1,25 @@
 import Foundation
 
 public struct Nayau {
-    private static let defaultInstance: Nayau = Nayau()
-    public var enableFileName = false
+    private static var defaultInstance: Nayau = Nayau()
+    private var enableFileName = false
+    private var debugBuild = false
+
+    public static func setup(enableFileName: Bool = false, debugBuild: Bool) {
+        Nayau.defaultInstance.debugBuild = debugBuild
+        Nayau.defaultInstance.enableFileName = enableFileName
+    }
 
     public static func debug(message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
-        #if DEBUG
+        if Nayau.defaultInstance.debugBuild {
             Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
-        #endif
+        }
     }
 
     public static func production(message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
-        #if RELEASE
+        if !Nayau.defaultInstance.debugBuild {
             Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
-        #endif
+        }
     }
 
     private func log(message message: String, logType: LogType?, file: String, line: Int, function: String) {
