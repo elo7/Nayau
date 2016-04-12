@@ -23,7 +23,7 @@ struct Message: CustomStringConvertible {
         newMessage = "\(newMessage)\(self.message)"
 
         if let fileInformation = self.fileInformation {
-            newMessage += "\n\(fileInformation.description)"
+            newMessage += " FileInformation: \(fileInformation.description)"
         }
 
         return newMessage

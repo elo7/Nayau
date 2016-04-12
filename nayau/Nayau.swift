@@ -31,8 +31,9 @@ public struct Nayau {
                     builder.fileInformation = FileInformation(file: file, line: line, function: function)
                 }
             }
-
-            print(Message(messageBuilder: messageBuilder)?.description)
+            if let message = Message(messageBuilder: messageBuilder)?.description {
+                print(message)
+            }
         }
     }
 }
