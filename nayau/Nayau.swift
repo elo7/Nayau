@@ -23,15 +23,15 @@ public struct Nayau {
     }
 
     private func log(message message: String, logType: LogType?, file: String, line: Int, function: String) {
-        let messageBuilder = MessageBuilder { builder in
-            builder.message = message
-            builder.logType = logType
-            if self.enableFileName {
-                builder.fileInformation = FileInformation(file: file, line: line, function: function)
-            }
-        }
-
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            let messageBuilder = MessageBuilder { builder in
+                builder.message = message
+                builder.logType = logType
+                if self.enableFileName {
+                    builder.fileInformation = FileInformation(file: file, line: line, function: function)
+                }
+            }
+
             print(Message(messageBuilder: messageBuilder)?.description)
         }
     }
