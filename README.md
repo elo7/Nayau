@@ -41,13 +41,15 @@ import nayau
 Nayau.setup(debugBuild: YourClass().isDebug())
 
 Nayau.debug("A debug message")
+#=> [Debug] : A debug message 
 
 Nayau.production("A production message")
+#=> [Production] : A production message 
 ```
 
 ### Enable file information
 If you want to see file that logging information, just enable that in the Nayau setup method:
-```
+```swift
 import nayau
 
 Nayau.setup(enableFileName: true, debugBuild: YourClass().isDebug())
@@ -66,4 +68,4 @@ Sometimes, we (developers) need to debug our developing applications, with that 
 - If you ***want to contribute***, submit a pull request
 
 ## License
-Oahu is released under the MIT license. See LICENSE for details.
+Nayau is released under the MIT license. See LICENSE for details.
