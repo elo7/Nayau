@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B7946211CBD371D0003272C /* PreProcessorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B79461F1CBD371D0003272C /* PreProcessorMacros.h */; };
 		8B7946221CBD371D0003272C /* PreProcessorMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7946201CBD371D0003272C /* PreProcessorMacros.m */; };
+		8B7946231CBD38770003272C /* PreProcessorMacros.h in Sources */ = {isa = PBXBuildFile; fileRef = 8B79461F1CBD371D0003272C /* PreProcessorMacros.h */; };
 		F1CB8A681CBC04EE008D6B6E /* nayau.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CB8A671CBC04EE008D6B6E /* nayau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1CB8A6F1CBC04EE008D6B6E /* nayau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB8A641CBC04EE008D6B6E /* nayau.framework */; };
 		F1CB8A741CBC04EE008D6B6E /* nayauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */; };
@@ -213,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7946231CBD38770003272C /* PreProcessorMacros.h in Sources */,
 				F1CB8A851CBC2837008D6B6E /* LogType.swift in Sources */,
 				F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */,
 				F1CB8A811CBC27F9008D6B6E /* Message.swift in Sources */,
