@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B7946211CBD371D0003272C /* PreProcessorMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B79461F1CBD371D0003272C /* PreProcessorMacros.h */; };
-		8B7946221CBD371D0003272C /* PreProcessorMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7946201CBD371D0003272C /* PreProcessorMacros.m */; };
 		F1CB8A681CBC04EE008D6B6E /* nayau.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CB8A671CBC04EE008D6B6E /* nayau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1CB8A6F1CBC04EE008D6B6E /* nayau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB8A641CBC04EE008D6B6E /* nayau.framework */; };
 		F1CB8A741CBC04EE008D6B6E /* nayauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */; };
@@ -29,8 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B79461F1CBD371D0003272C /* PreProcessorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreProcessorMacros.h; sourceTree = "<group>"; };
-		8B7946201CBD371D0003272C /* PreProcessorMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreProcessorMacros.m; sourceTree = "<group>"; };
 		F1CB8A641CBC04EE008D6B6E /* nayau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = nayau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CB8A671CBC04EE008D6B6E /* nayau.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nayau.h; sourceTree = "<group>"; };
 		F1CB8A691CBC04EE008D6B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,8 +85,6 @@
 				F1CB8A801CBC27F9008D6B6E /* Message.swift */,
 				F1CB8A821CBC2818008D6B6E /* FileInformation.swift */,
 				F1CB8A841CBC2837008D6B6E /* LogType.swift */,
-				8B79461F1CBD371D0003272C /* PreProcessorMacros.h */,
-				8B7946201CBD371D0003272C /* PreProcessorMacros.m */,
 			);
 			path = nayau;
 			sourceTree = "<group>";
@@ -111,7 +105,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7946211CBD371D0003272C /* PreProcessorMacros.h in Headers */,
 				F1CB8A681CBC04EE008D6B6E /* nayau.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +210,6 @@
 				F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */,
 				F1CB8A811CBC27F9008D6B6E /* Message.swift in Sources */,
 				F1CB8A831CBC2818008D6B6E /* FileInformation.swift in Sources */,
-				8B7946221CBD371D0003272C /* PreProcessorMacros.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
