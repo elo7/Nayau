@@ -10,9 +10,29 @@ public struct Nayau {
         Nayau.defaultInstance.enableFileName = enableFileName
     }
 
+    public static func debug(logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
+        self.debugLog(message: closure(), logType: logType, file: file, line: line, function: function)
+    }
+
+    public static func debug(message: CustomStringConvertible, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
+        self.debugLog(message: message.description, logType: logType, file: file, line: line, function: function)
+    }
+
     public static func debug(message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
+        self.debugLog(message: message, logType: logType, file: file, line: line, function: function)
+    }
+
+    public static func production(message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
+        self.productionLog(message: message, logType: logType, file: file, line: line, function: function)
+    }
+
+    public static func production(logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
+        self.productionLog(message: closure(), logType: logType, file: file, line: line, function: function)
+    }
+
+    private static func productionLog(message message: String, logType: LogType?, file: String, line: Int, function: String) {
         if let debugBuild = Nayau.defaultInstance.debugBuild {
-            if debugBuild {
+            if !debugBuild {
                 Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
             }
         } else {
@@ -20,9 +40,9 @@ public struct Nayau {
         }
     }
 
-    public static func production(message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
+    private static func debugLog(message message: String, logType: LogType?, file: String, line: Int, function: String) {
         if let debugBuild = Nayau.defaultInstance.debugBuild {
-            if !debugBuild {
+            if debugBuild {
                 Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
             }
         } else {

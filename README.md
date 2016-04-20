@@ -41,10 +41,16 @@ import nayau
 Nayau.setup(debugBuild: YourClass().isDebug())
 
 Nayau.debug("A debug message")
-#=> [Debug] : A debug message 
+#=> A debug message 
+
+Nayay.debug("A error message in debug mode", logType: LogType.Error)
+#=> [Error] : A error message in debug mode
 
 Nayau.production("A production message")
-#=> [Production] : A production message 
+#=> A production message 
+
+Nayau.production("A error message in production mode", logType: LogType.Error) {
+#=> [Error] : A error message in production mode
 ```
 
 ### Enable file information
@@ -55,12 +61,14 @@ import nayau
 Nayau.setup(enableFileName: true, debugBuild: YourClass().isDebug())
 
 Nayau.debug("A debug message")
-#=> [Debug] : A debug message FileInformation: File: yourPath/YourFile.swift Line Number: 61 Function: xablau()
+#=> A debug message FileInformation: File: yourPath/YourFile.swift Line Number: 61 Function: xablau()
 
+Nayau.production("A production message")
+#=> A production message FileInformation: File: yourPath/YourFile.swift Line Number: 61 Function: xablau()
 ```
 
 ## Why Nayau?
-Sometimes, we (developers) need to debug our developing applications, with that in mind, we build a simple tool that can help you with your debug/production log. When you need to print some information/data just for test/follow flow of your application, use `debug` instance method from Nayau, when you need to print something in released apps, use `production` instance method from Nayau. Quite simple :)
+Sometimes, we (developers) need to debug our developing applications, with that in mind, we built a simple tool that can help you with your debug/production log. When you need to print some information/data just for test/follow flow of your application, use `debug` instance method from Nayau, when you need to print something in released apps, use `production` instance method from Nayau. Quite simple :)
 
 ## Contribute
 - If you **found a bug**, open an issue.
