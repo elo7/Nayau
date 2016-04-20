@@ -1,13 +1,6 @@
 import XCTest
 @testable import nayau
 
-class NayauTests: XCTestCase {
-
-    func testSomeDebugLog() {
-        Nayau.defaultInstance.debug("teste", logType: LogType.Error)
-    }
-}
-
 class MessageTests: XCTestCase {
     func testShouldValidateDebugMessage() {
         let messageBuilder = MessageBuilder { builder in
@@ -65,6 +58,6 @@ class MessageTests: XCTestCase {
         }
 
         let description = Message(messageBuilder: messageBuilder)?.description
-        XCTAssertEqual(description, "A Message without LogType\nFile: Test.swift Line Number: 55 Function: xablau()")
+        XCTAssertEqual(description, "A Message without LogType FileInformation: File: Test.swift Line Number: 55 Function: xablau()")
     }
 }
