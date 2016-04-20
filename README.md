@@ -2,7 +2,7 @@
 *A production/debug logger for you Swift Project*
 
 ## Requirements
-- iOS 8+
+- iOS 9.0
 - Xcode 7.1+
 
 ## Instalation
@@ -18,7 +18,6 @@ And add the path to the framework under “Input Files”, e.g.:
 ```
 $(SRCROOT)/Carthage/Build/iOS/nayau.framework
 ```
-
 
 ## Getting started
 First of all, you shall setup your debug/release flags, it's quite simple. "Set it in the Swift Compiler - Custom Flags section, 'Other Swift Flags' line. Just Add `-D DEBUG`. If you are having problems with that, look [that Stack Overflow question](http://stackoverflow.com/questions/24111854/in-absence-of-preprocessor-macros-is-there-a-way-to-define-practical-scheme-spe).
@@ -65,6 +64,18 @@ Nayau.debug("A debug message")
 
 Nayau.production("A production message")
 #=> A production message FileInformation: File: yourPath/YourFile.swift Line Number: 61 Function: xablau()
+```
+
+### Compute information in Debug
+If you want to compute something heavy to process, you can use Nayau with trailing closure, and that heavy compute will execute just in debug:
+```swift
+Nayau.debug {
+    let xablau = [ "this" , "message" , "concat" , "is" , "just" , "necessary" , "in" , "debug" , "mode" ]
+
+    return xablau.map {
+        $0.uppercaseString
+    }
+}
 ```
 
 ## Why Nayau?
