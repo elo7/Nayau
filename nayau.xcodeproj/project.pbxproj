@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F152F91B1CC90C8B00E24639 /* ThreadInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152F91A1CC90C8B00E24639 /* ThreadInformation.swift */; };
 		F1CB8A681CBC04EE008D6B6E /* nayau.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CB8A671CBC04EE008D6B6E /* nayau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1CB8A6F1CBC04EE008D6B6E /* nayau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CB8A641CBC04EE008D6B6E /* nayau.framework */; };
 		F1CB8A741CBC04EE008D6B6E /* nayauTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB8A731CBC04EE008D6B6E /* nayauTests.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F152F91A1CC90C8B00E24639 /* ThreadInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadInformation.swift; sourceTree = "<group>"; };
 		F1CB8A641CBC04EE008D6B6E /* nayau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = nayau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CB8A671CBC04EE008D6B6E /* nayau.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nayau.h; sourceTree = "<group>"; };
 		F1CB8A691CBC04EE008D6B6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F1CB8A801CBC27F9008D6B6E /* Message.swift */,
 				F1CB8A821CBC2818008D6B6E /* FileInformation.swift */,
 				F1CB8A841CBC2837008D6B6E /* LogType.swift */,
+				F152F91A1CC90C8B00E24639 /* ThreadInformation.swift */,
 			);
 			path = nayau;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				F1CB8A851CBC2837008D6B6E /* LogType.swift in Sources */,
 				F1CB8A7F1CBC0530008D6B6E /* Nayau.swift in Sources */,
+				F152F91B1CC90C8B00E24639 /* ThreadInformation.swift in Sources */,
 				F1CB8A811CBC27F9008D6B6E /* Message.swift in Sources */,
 				F1CB8A831CBC2818008D6B6E /* FileInformation.swift in Sources */,
 			);
