@@ -3,11 +3,13 @@ import Foundation
 public struct Nayau {
     private static var defaultInstance: Nayau = Nayau()
     private var enableFileName = false
+    private var enableThreadInformation = false
     private var debugBuild: Bool?
 
-    public static func setup(enableFileName enableFileName: Bool = false, debugBuild: Bool) {
+    public static func setup(enableFileName enableFileName: Bool = false, enableThreadInformation: Bool = false, debugBuild: Bool) {
         Nayau.defaultInstance.debugBuild = debugBuild
         Nayau.defaultInstance.enableFileName = enableFileName
+        Nayau.defaultInstance.enableThreadInformation = enableThreadInformation
     }
 
     public static func debug(logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
@@ -57,6 +59,10 @@ public struct Nayau {
                 builder.logType = logType
                 if self.enableFileName {
                     builder.fileInformation = FileInformation(file: file, line: line, function: function)
+                }
+
+                if self.enableThreadInformation {
+                    builder.threadInformation = ThreadInformation(enableQoS: true)
                 }
             }
             if let message = Message(messageBuilder: messageBuilder)?.description {

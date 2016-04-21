@@ -1,7 +1,7 @@
 import Foundation
 
 struct ThreadInformation: CustomStringConvertible {
-    var enableQoS = false
+    let enableQoS: Bool
 
     var description: String {
         var result = "Current Thread: \(NSThread.currentThread().description)"
