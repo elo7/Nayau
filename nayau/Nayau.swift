@@ -1,36 +1,36 @@
 import Foundation
 
 public struct Nayau {
-    private static var defaultInstance: Nayau = Nayau()
-    private var enableFileName = false
-    private var debugBuild: Bool?
+    fileprivate static var defaultInstance: Nayau = Nayau()
+    fileprivate var enableFileName = false
+    fileprivate var debugBuild: Bool?
 
-    public static func setup(enableFileName enableFileName: Bool = false, debugBuild: Bool) {
+    public static func setup(enableFileName: Bool = false, debugBuild: Bool) {
         Nayau.defaultInstance.debugBuild = debugBuild
         Nayau.defaultInstance.enableFileName = enableFileName
     }
 
-    public static func debug(logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
+    public static func debug(_ logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
         self.debugLog(message: closure(), logType: logType, file: file, line: line, function: function)
     }
 
-    public static func debug(message: CustomStringConvertible, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
+    public static func debug(_ message: CustomStringConvertible, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
         self.debugLog(message: message.description, logType: logType, file: file, line: line, function: function)
     }
 
-    public static func debug(message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
+    public static func debug(_ message: String, logType: LogType? = .Debug, file: String = #file, line: Int = #line, function: String = #function) {
         self.debugLog(message: message, logType: logType, file: file, line: line, function: function)
     }
 
-    public static func production(message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
+    public static func production(_ message: String, logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function) {
         self.productionLog(message: message, logType: logType, file: file, line: line, function: function)
     }
 
-    public static func production(logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
+    public static func production(_ logType: LogType? = .Information, file: String = #file, line: Int = #line, function: String = #function, closure: () -> (String)) {
         self.productionLog(message: closure(), logType: logType, file: file, line: line, function: function)
     }
 
-    private static func productionLog(message message: String, logType: LogType?, file: String, line: Int, function: String) {
+    fileprivate static func productionLog(message: String, logType: LogType?, file: String, line: Int, function: String) {
         if let debugBuild = Nayau.defaultInstance.debugBuild {
             if !debugBuild {
                 Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
@@ -40,7 +40,7 @@ public struct Nayau {
         }
     }
 
-    private static func debugLog(message message: String, logType: LogType?, file: String, line: Int, function: String) {
+    fileprivate static func debugLog(message: String, logType: LogType?, file: String, line: Int, function: String) {
         if let debugBuild = Nayau.defaultInstance.debugBuild {
             if debugBuild {
                 Nayau.defaultInstance.log(message: message, logType: logType, file: file, line: line, function: function)
@@ -50,8 +50,8 @@ public struct Nayau {
         }
     }
 
-    private func log(message message: String, logType: LogType?, file: String, line: Int, function: String) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+    fileprivate func log(message: String, logType: LogType?, file: String, line: Int, function: String) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             let messageBuilder = MessageBuilder { builder in
                 builder.message = message
                 builder.logType = logType
