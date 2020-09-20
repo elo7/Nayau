@@ -2,8 +2,9 @@
 *A production/debug logger for you Swift Project*
 
 ## Requirements
-- iOS 9.0
-- Xcode 7.1+
+- iOS 12.0+
+- Swift 5.0
+- Xcode 8.0+
 
 ## Instalation
 Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).
