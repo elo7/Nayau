@@ -51,7 +51,7 @@ public struct Nayau {
     }
 
     fileprivate func log(message: String, logType: LogType?, file: String, line: Int, function: String) {
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
+        DispatchQueue.global(qos: .default).async {
             let messageBuilder = MessageBuilder { builder in
                 builder.message = message
                 builder.logType = logType
