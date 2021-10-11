@@ -6,7 +6,7 @@ import PackageDescription
 
 let package = Package(
     name: "nayau",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "nayau",

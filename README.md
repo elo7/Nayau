@@ -2,12 +2,12 @@
 *A production/debug logger for you Swift Project*
 
 ## Requirements
-- iOS 12.0+
+- iOS 11.0+
 - Swift 5.0
 - Xcode 8.0+
 
 ## Instalation
-Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).
+Embedded frameworks require a minimum deployment target of iOS 11.
 
 ### Carthage
 ```
@@ -19,6 +19,12 @@ And add the path to the framework under “Input Files”, e.g.:
 ```
 $(SRCROOT)/Carthage/Build/iOS/nayau.framework
 ```
+
+### Swift Package Manager (SPM)
+
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. To integrate using Apple's Swift package manager from xcode :
+
+File -> Add Packages... -> Enter package URL : https://github.com/elo7/Nayau, choose the latest release
 
 ## Getting started
 First of all, you shall setup your debug/release flags, it's quite simple. "Set it in the Swift Compiler - Custom Flags section, 'Other Swift Flags' line. Just Add `-D DEBUG`. If you are having problems with that, look [that Stack Overflow question](http://stackoverflow.com/questions/24111854/in-absence-of-preprocessor-macros-is-there-a-way-to-define-practical-scheme-spe).
